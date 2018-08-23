@@ -1,0 +1,3 @@
+Write a recursive function to count the number of items in a list.
+
+BONUS: If there is no Linked List implementation in your language of choice, create one.

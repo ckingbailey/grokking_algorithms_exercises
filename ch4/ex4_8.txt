@@ -1,0 +1,1 @@
+In Big O notation how long would it take to make a multiplication table of all the elements in an array?

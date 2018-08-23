@@ -1,0 +1,1 @@
+In Big O notation how long would it take to print each element in an array?

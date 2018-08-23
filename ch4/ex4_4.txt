@@ -1,0 +1,3 @@
+What is the base case and the recursive case for binary search?
+
+BONUS: Write a recursive function for binary search.
