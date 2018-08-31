@@ -1,5 +1,5 @@
+const { sum } = require('./4_1.js');
+
 args = process.argv.slice(2);
 
-console.log(args)
-console.log(args.shift())
-console.log(args)
+console.log(sum(args));
