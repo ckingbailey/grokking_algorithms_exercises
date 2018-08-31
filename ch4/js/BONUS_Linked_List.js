@@ -18,7 +18,7 @@ function Node(value, prev, next) {
     this.next = next;
 }
 
-LinkedList.prototype.addToHead(value) {
+LinkedList.prototype.addToHead = (value) => {
     newNode = new Node(value, null, this.head);
     if (this.head) this.head.prev = newNode;
     else this.tail = newNode;
