@@ -12,8 +12,11 @@
 ** meaning I would have to start from there before accessing any further items?
 */
 
-function countList(list) {
+exports.count = function countList(list) {
     // base case
-    if (list.cur() === list.end()) return 1
-    return 1 + countList(list.next())
+    if (!list.head) return 0
+    if (list.head === list.tail) return 1
+    // recurse case
+    list.removeHead()
+    return 1 + countList(list)
 }
