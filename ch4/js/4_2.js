@@ -17,6 +17,6 @@ exports.count = function countList(list) {
     if (!list.head) return 0
     if (list.head === list.tail) return 1
     // recurse case
-    list.removeHead()
+    list.shift()
     return 1 + countList(list)
 }

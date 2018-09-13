@@ -15,21 +15,21 @@ function Node(value, prev, next) {
     this.next = next;
 }
 
-LinkedList.prototype.addToHead = function(value) {
+LinkedList.prototype.unshift = function(value) {
     newNode = new Node(value, null, this.head || null)
     if (this.head) this.head.prev = newNode
     else this.tail = newNode
     this.head = newNode
 }
 
-LinkedList.prototype.addToTail = function(value) {
+LinkedList.prototype.push = function(value) {
     newNode = new Node(value, this.tail, null)
     if (this.tail) this.tail.next = newNode
     else this.head = newNode
     this.tail = newNode
 }
 
-LinkedList.prototype.removeHead = function() {
+LinkedList.prototype.shift = function() {
     if (this.head === this.tail) {
         this.tail = null
         this.head = null
@@ -39,7 +39,7 @@ LinkedList.prototype.removeHead = function() {
     }
 }
 
-LinkedList.prototype.removeTail = function() {
+LinkedList.prototype.pop = function() {
     if (this.head === this.tail) {
         this.tail = null
         this.head = null

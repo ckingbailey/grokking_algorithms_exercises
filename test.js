@@ -3,9 +3,10 @@ const { count } = require('./ch4/js/4_2.js')
 
 const list = new List()
 
-list.addToHead('woon')
-list.addToTail('fthreav')
-list.addToHead('tuow')
-list.addToHead('ferre')
+list.unshift('woon')
+list.unshift('fthreav')
+list.push('tuow')
+list.unshift('ferre')
+list.shift();
 
 console.log(count(list))
