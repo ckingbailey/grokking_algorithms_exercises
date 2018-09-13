@@ -2,9 +2,6 @@
 ** LinkedList should know about only current item, head, and tail
 ** current item knows about its prev and next neighbors
 ** head and tail are items and therefore know about their prev and next neighbors
-
-** NEW PLAN:
-** copying the scheme from Little Linked List post on Hacker Noon
 */
 
 function LinkedList() {
@@ -18,9 +15,38 @@ function Node(value, prev, next) {
     this.next = next;
 }
 
-LinkedList.prototype.addToHead = (value) => {
-    newNode = new Node(value, null, this.head);
-    if (this.head) this.head.prev = newNode;
-    else this.tail = newNode;
-    this.head = newNode;
+LinkedList.prototype.addToHead = function(value) {
+    newNode = new Node(value, null, this.head || null)
+    if (this.head) this.head.prev = newNode
+    else this.tail = newNode
+    this.head = newNode
 }
+
+LinkedList.prototype.addToTail = function(value) {
+    newNode = new Node(value, this.tail, null)
+    if (this.tail) this.tail.next = newNode
+    else this.head = newNode
+    this.tail = newNode
+}
+
+LinkedList.prototype.removeHead = function() {
+    if (this.head === this.tail) {
+        this.tail = null
+        this.head = null
+    } else {
+        this.head = this.head.next
+        this.head.prev = null
+    }
+}
+
+LinkedList.prototype.removeTail = function() {
+    if (this.head === this.tail) {
+        this.tail = null
+        this.head = null
+    } else {
+        this.tail = this.tail.prev
+        this.tail.next = null
+    }
+}
+
+module.exports = { LinkedList }
